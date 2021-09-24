@@ -25,10 +25,9 @@ BMP180::BMP180(){}
 double BMP180::GetAirPressure()
 {
   Serial.begin(115200);
-  if (pressure.begin())
+  if (pressure.begin()){
     Serial.println("BMP180 init success");
-  {}else
-  {
+  }else{
     Serial.println("BMP180 init fail\n\n");
     while(1); // Pause forever.
   }
